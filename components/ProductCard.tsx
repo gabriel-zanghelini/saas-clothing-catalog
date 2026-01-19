@@ -1,46 +1,11 @@
 import Image from 'next/image'
-import { Product, SaleStatus } from '@/types/database.types'
+import { Product } from '@/types/database.types'
 
 interface ProductCardProps {
   product: Product
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const isSold = product.sale_status === SaleStatus.SOLD
-  const isReserved = product.sale_status === SaleStatus.RESERVED
-  const isOnHold = product.sale_status === SaleStatus.ON_HOLD
-
-  const getSaleStatusBadge = () => {
-    switch (product.sale_status) {
-      case SaleStatus.SOLD:
-        return (
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-gray-800 rounded-full">
-            SOLD
-          </span>
-        )
-      case SaleStatus.RESERVED:
-        return (
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-orange-500 rounded-full">
-            RESERVED
-          </span>
-        )
-      case SaleStatus.ON_HOLD:
-        return (
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-yellow-600 rounded-full">
-            ON HOLD
-          </span>
-        )
-      case SaleStatus.AVAILABLE:
-        return (
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-green-600 rounded-full">
-            AVAILABLE
-          </span>
-        )
-      default:
-        return null
-    }
-  }
-
   const getConditionColor = () => {
     switch (product.condition) {
       case 'new':
@@ -60,37 +25,17 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className={`group relative bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
-        isSold || isReserved || isOnHold
-          ? 'opacity-75'
-          : 'hover:shadow-xl hover:-translate-y-1'
-      }`}
+      className="group relative bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+      <div className="relative aspect-3/4 overflow-hidden bg-gray-100">
         <Image
           src={product.image_url}
           alt={product.name}
           fill
-          className={`object-cover transition-transform duration-300 ${
-            !isSold && !isReserved && !isOnHold ? 'group-hover:scale-105' : ''
-          }`}
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        
-        {/* Sale Status Badge - Top Right */}
-        <div className="absolute top-3 right-3">
-          {getSaleStatusBadge()}
-        </div>
-
-        {/* SOLD Overlay */}
-        {isSold && (
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <span className="text-white text-3xl font-bold tracking-wider transform -rotate-12">
-              SOLD
-            </span>
-          </div>
-        )}
       </div>
 
       {/* Product Details */}
@@ -139,11 +84,9 @@ export function ProductCard({ product }: ProductCardProps) {
             ${product.price.toFixed(2)}
           </span>
           
-          {product.sale_status === SaleStatus.AVAILABLE && (
-            <button className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded transition-colors">
-              View Details
-            </button>
-          )}
+          <button className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded transition-colors">
+            View Details
+          </button>
         </div>
       </div>
     </div>

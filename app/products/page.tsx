@@ -24,6 +24,7 @@ export default async function ProductsPage({
     .from('products')
     .select('*')
     .eq('tenant_id', tenant.id)
+    .eq('sale_status', SaleStatus.AVAILABLE) // Only show available items
     .order('created_at', { ascending: false })
 
   // Apply filters from search params
@@ -33,13 +34,6 @@ export default async function ProductsPage({
 
   if (params.size) {
     query = query.eq('size', params.size)
-  }
-
-  if (params.sale_status) {
-    query = query.eq('sale_status', params.sale_status)
-  } else {
-    // By default, show available items first
-    query = query.order('sale_status', { ascending: true })
   }
 
   const { data: products, error } = await query
@@ -57,13 +51,6 @@ export default async function ProductsPage({
   const categories = [...new Set(products?.map((p) => p.category) || [])]
   const sizes = [...new Set(products?.map((p) => p.size) || [])]
 
-  const availableCount = products?.filter(
-    (p) => p.sale_status === SaleStatus.AVAILABLE
-  ).length || 0
-  const soldCount = products?.filter(
-    (p) => p.sale_status === SaleStatus.SOLD
-  ).length || 0
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -77,13 +64,7 @@ export default async function ProductsPage({
           </p>
           <div className="flex gap-4 mt-4 text-sm text-gray-600">
             <span>
-              <strong>{availableCount}</strong> Available
-            </span>
-            <span>
-              <strong>{soldCount}</strong> Sold
-            </span>
-            <span>
-              <strong>{products?.length || 0}</strong> Total Items
+              <strong>{products?.length || 0}</strong> Available Items
             </span>
           </div>
         </div>

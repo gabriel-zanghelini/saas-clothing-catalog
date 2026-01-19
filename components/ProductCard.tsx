@@ -86,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* SOLD Overlay */}
         {isSold && (
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <span className="text-white text-4xl font-bold tracking-wider transform -rotate-12">
+            <span className="text-white text-3xl font-bold tracking-wider transform -rotate-12">
               SOLD
             </span>
           </div>
@@ -94,15 +94,15 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Details */}
-      <div className="p-4">
+      <div className="p-3">
         {/* Category and Condition Tags */}
-        <div className="flex gap-2 mb-2">
-          <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded">
+        <div className="flex gap-1.5 mb-2">
+          <span className="px-1.5 py-0.5 text-xs font-medium bg-gray-100 text-gray-700 rounded">
             {product.category}
           </span>
           {product.condition && (
             <span
-              className={`px-2 py-1 text-xs font-medium rounded ${getConditionColor()}`}
+              className={`px-1.5 py-0.5 text-xs font-medium rounded ${getConditionColor()}`}
             >
               {product.condition.replace('_', ' ').toUpperCase()}
             </span>
@@ -110,18 +110,18 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Product Name */}
-        <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">
+        <h3 className="text-base font-semibold text-gray-900 mb-1 line-clamp-1">
           {product.name}
         </h3>
 
         {/* Brand */}
-        <p className="text-sm text-gray-600 mb-3">{product.brand}</p>
+        <p className="text-sm text-gray-600 mb-2">{product.brand}</p>
 
         {/* Size and Color */}
-        <div className="flex gap-2 mb-3">
+        <div className="flex gap-2 mb-2">
           <div className="flex items-center gap-1">
             <span className="text-xs text-gray-500">Size:</span>
-            <span className="px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-800 rounded">
+            <span className="px-1.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800 rounded">
               {product.size}
             </span>
           </div>
@@ -135,12 +135,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-gray-900">
+          <span className="text-xl font-bold text-gray-900">
             ${product.price.toFixed(2)}
           </span>
           
           {product.sale_status === SaleStatus.AVAILABLE && (
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded transition-colors">
+            <button className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded transition-colors">
               View Details
             </button>
           )}

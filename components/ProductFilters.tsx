@@ -26,7 +26,7 @@ export function ProductFilters({ categories, sizes }: ProductFiltersProps) {
 
   return (
     <div className="bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4">
+      <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex flex-wrap gap-4">
           {/* Category Filter */}
           {categories.length > 0 && (

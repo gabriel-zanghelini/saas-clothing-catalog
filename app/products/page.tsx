@@ -36,6 +36,10 @@ export default async function ProductsPage({
     query = query.eq('size', params.size)
   }
 
+  if (params.color) {
+    query = query.eq('color', params.color)
+  }
+
   const { data: products, error } = await query
 
   if (error) {
@@ -47,9 +51,10 @@ export default async function ProductsPage({
     )
   }
 
-  // Get unique categories and sizes for filters
+  // Get unique categories, sizes, and colors for filters
   const categories = [...new Set(products?.map((p) => p.category) || [])]
   const sizes = [...new Set(products?.map((p) => p.size) || [])]
+  const colors = [...new Set(products?.map((p) => p.color) || [])]
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -71,7 +76,7 @@ export default async function ProductsPage({
       </div>
 
       {/* Filters */}
-      <ProductFilters categories={categories} sizes={sizes} />
+      <ProductFilters categories={categories} sizes={sizes} colors={colors} />
 
       {/* Products Grid */}
       <div className="max-w-6xl mx-auto px-6 py-8">

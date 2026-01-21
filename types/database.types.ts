@@ -74,6 +74,7 @@ export interface Database {
           brand: string
           category: string
           price: number
+          original_price: number | null
           size: ProductSize
           color: string
           sale_status: SaleStatus
@@ -90,6 +91,7 @@ export interface Database {
           brand: string
           category: string
           price: number
+          original_price?: number | null
           size: ProductSize
           color: string
           sale_status?: SaleStatus
@@ -106,6 +108,7 @@ export interface Database {
           brand?: string
           category?: string
           price?: number
+          original_price?: number | null
           size?: ProductSize
           color?: string
           sale_status?: SaleStatus

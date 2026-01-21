@@ -5,9 +5,10 @@ import { useRouter, useSearchParams } from 'next/navigation'
 interface ProductFiltersProps {
   categories: string[]
   sizes: string[]
+  colors: string[]
 }
 
-export function ProductFilters({ categories, sizes }: ProductFiltersProps) {
+export function ProductFilters({ categories, sizes, colors }: ProductFiltersProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -63,6 +64,27 @@ export function ProductFilters({ categories, sizes }: ProductFiltersProps) {
                 {sizes.map((size) => (
                   <option key={size} value={size}>
                     {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {/* Color Filter */}
+          {colors.length > 0 && (
+            <div>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Color
+              </label>
+              <select
+                className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={searchParams.get('color') || ''}
+                onChange={(e) => handleFilterChange('color', e.target.value)}
+              >
+                <option value="">All Colors</option>
+                {colors.map((color) => (
+                  <option key={color} value={color}>
+                    {color}
                   </option>
                 ))}
               </select>

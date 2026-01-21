@@ -80,9 +80,22 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-gray-900">
-            ${product.price.toFixed(2)}
-          </span>
+          <div className="flex items-center gap-2">
+            {product.original_price && product.original_price > product.price ? (
+              <>
+                <span className="text-sm text-gray-500 line-through font-normal">
+                  ${product.original_price.toFixed(2)}
+                </span>
+                <span className="text-xl font-bold text-gray-900">
+                  ${product.price.toFixed(2)}
+                </span>
+              </>
+            ) : (
+              <span className="text-xl font-bold text-gray-900">
+                ${product.price.toFixed(2)}
+              </span>
+            )}
+          </div>
           
           <button className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded transition-colors">
             View Details

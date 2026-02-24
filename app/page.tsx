@@ -1,8 +1,32 @@
 import Link from 'next/link'
+import PlansGrid from '@/components/PlansGrid'
+import type { Plan } from '@/types/plan.types'
 
 export default function HomePage() {
+  const plans: Plan[] = [
+    {
+      id: 'launch',
+      name: 'Launch Plan',
+      monthly: 0,
+      yearly: 0,
+      currency: 'BRL',
+      features: ['Basic storefront', 'Up to 100 products', 'Community support'],
+      ctaLabel: 'Launch Free',
+    },
+    {
+      id: 'partner',
+      name: 'Partner Plan',
+      monthly: 15,
+      yearly: 150,
+      currency: 'BRL',
+      features: ['Custom subdomain', 'Priority support', 'Advanced analytics'],
+      ctaLabel: 'Start Partner Plan',
+      highlight: true,
+    },
+  ]
+
   return (
-    <div className='min-h-screen bg-linear-to-br bg-gray-100'>
+    <div className='min-h-screen bg-gray-100'>
       <div className='container mx-auto px-4 py-16'>
         <div className='max-w-4xl mx-auto text-center'>
           {/* Hero Section */}
@@ -63,11 +87,14 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* Plans */}
+          <PlansGrid plans={plans} />
+
           {/* Demo Stores */}
           <div className='mt-16 p-8 bg-white rounded-lg shadow-md'>
-            <h2 className='text-2xl font-bold mb-6'>Demo Stores</h2>
+            <h2 className='text-gray-600 text-2xl font-bold mb-6'>Conheça alguns parceiros</h2>
             <p className='text-gray-600 mb-6'>
-              Check out these sample stores to see the platform in action:
+              Esses são exemplos de lojas criadas por nossos parceiros usando nossa plataforma
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <a

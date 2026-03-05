@@ -1,11 +1,29 @@
 import type { Plan } from '@/types/plan.types'
 import PlanCard from './PlanCard'
 
-type Props = {
-  plans: Plan[]
-}
-
-export default function PlansGrid({ plans }: Props) {
+export default function PlansGrid() {
+  const plans: Plan[] = [
+    {
+      id: 'launch',
+      name: 'Launch Plan',
+      monthly: 0,
+      yearly: 0,
+      currency: 'BRL',
+      features: ['Basic storefront', 'Up to 100 products', 'Community support'],
+      ctaLabel: 'Launch Free',
+    },
+    {
+      id: 'partner',
+      name: 'Partner Plan',
+      monthly: 15,
+      yearly: 150,
+      currency: 'BRL',
+      features: ['Custom subdomain', 'Priority support', 'Advanced analytics'],
+      ctaLabel: 'Start Partner Plan',
+      highlight: true,
+    },
+  ]
+  
   return (
     <section aria-labelledby='plans-heading' className='mt-16 w-full'>
       <div className='max-w-4xl mx-auto text-center mb-8'>

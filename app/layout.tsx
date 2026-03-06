@@ -1,12 +1,7 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
 import './globals.css'
 import { AuthProvider } from '@/lib/auth-context'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
+import { roboto } from '@/components/fonts'
 
 export const metadata: Metadata = {
   title: 'Multi-Tenant Clothing Catalog',
@@ -21,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='antialiased' style={{ ...geistSans.style }}>
+      <body className={`min-h-screen antialiased ${roboto.className}`}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

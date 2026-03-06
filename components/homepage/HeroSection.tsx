@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import { playfair_display } from '../fonts'
 
 const HeroSection: React.FC = () => {
   return (
     <div>
-      <h1 className='text-5xl md:text-6xl font-bold text-gray-900 mb-6'>
+      <h1
+        className={`text-5xl md:text-6xl font-bold mb-6 ${playfair_display.className}`}
+      >
         Venda suas roupas de segunda mão com facilidade
       </h1>
       <p className='text-xl text-gray-600 mb-12'>

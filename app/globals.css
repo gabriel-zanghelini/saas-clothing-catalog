@@ -1,11 +1,18 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #fdf7e2;
+  --background: #fff7ef;
   --foreground: #1b1b1b;
 }
 
-@layer base { 
+@theme {
+  --color-primary-400: #ca4a00;
+  --color-secondary-400: #ddccff;
+  --color-background-color: var(--background);
+  --color-foreground-color: var(--foreground);
+}
+
+@layer base {
   *,
   *::before,
   *::after {
@@ -19,7 +26,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   /* @media (prefers-color-scheme: dark) {

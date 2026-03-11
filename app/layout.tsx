@@ -4,9 +4,9 @@ import { AuthProvider } from '@/lib/auth-context'
 import { roboto } from '@/components/fonts'
 
 export const metadata: Metadata = {
-  title: 'Multi-Tenant Clothing Catalog',
+  title: 'Brechózin',
   description:
-    'Create your own unique clothing store with subdomain-based multi-tenancy',
+    'Tenha sua própria loja de roupas em minutos. Grátis. Direto ao ponto. Ideal para quem está começando a vender online.',
 }
 
 export default function RootLayout({

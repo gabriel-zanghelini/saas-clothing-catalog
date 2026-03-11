@@ -1,7 +1,7 @@
-import {  Playfair_Display, Roboto } from 'next/font/google'
+import {  Roboto, Merriweather } from 'next/font/google'
  
 
-export const playfair_display = Playfair_Display({
+export const merriweather_display = Merriweather({
   variable: '--font-title',
   subsets: ['latin'],
 })

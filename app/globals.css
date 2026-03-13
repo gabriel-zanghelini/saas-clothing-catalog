@@ -6,7 +6,9 @@
 }
 
 @theme {
+  --color-primary-300: #d84f00; 
   --color-primary-400: #ca4a00;
+  --color-primary-500: #bb4500;
   --color-secondary-400: #ddccff;
   --color-background-color: var(--background);
   --color-foreground-color: var(--foreground);

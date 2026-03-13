@@ -1,11 +1,11 @@
 import React from 'react'
-import { merriweather_display } from '../fonts'
+import { merriweather } from '../fonts'
 
 const Header: React.FC = () => {
   return (
     <div className='container mx-auto flex h-12 items-center justify-between'>
       <span
-        className={`text-2xl text-gray-600 font-bold ${merriweather_display.className}`}
+        className={`text-2xl text-gray-600 font-bold ${merriweather.className}`}
       >
         Brechózin
       </span>

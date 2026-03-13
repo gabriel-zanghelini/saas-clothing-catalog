@@ -140,6 +140,10 @@ Products can be added via:
 - Future admin panel (to be implemented)
 - Bulk import scripts (to be implemented)
 
+### Excalidraw
+
+ - https://excalidraw.com/#json=u9XfWA4oar-WVnFkoQnvw,oDnDoPPum458XIjXhn1N-g
+
 ## Roadmap
 
 - [ ] Admin dashboard for managing products

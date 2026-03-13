@@ -1,34 +1,23 @@
+import FeatureCard from './FeatureCard'
+
 const Features: React.FC = () => {
   return (
-    <div className='grid md:grid-cols-3 gap-8 mt-16'>
-      <div className='bg-white p-6 rounded-lg shadow-md'>
-        <div className='text-3xl mb-4'>🏪🏬</div>
-        <h3 className='text-indigo-600 text-xl font-semibold mb-2'>
-          Seu Subdomínio Próprio
-        </h3>
-        <p className='text-gray-600'>
-          Tenha um subdomínio profissional para sua loja
-        </p>
-      </div>
+    <div className="mt-16">
+      <h2 className='text-2xl font-bold mb-8 text-center'>Funcionalidades</h2>
 
-      <div className='bg-white p-6 rounded-lg shadow-md'>
-        <div className='text-3xl mb-4'>👕🌟</div>
-        <h3 className='text-indigo-600 text-xl font-semibold mb-2'>
-          Itens Únicos
-        </h3>
-        <p className='text-gray-600'>
-          Perfeita para peças únicas, vintage e itens de edição limitada
-        </p>
-      </div>
-
-      <div className='bg-white p-6 rounded-lg shadow-md'>
-        <div className='text-3xl mb-4'>📈📊</div>
-        <h3 className='text-indigo-600 text-xl font-semibold mb-2'>
-          Visualize sua evolução
-        </h3>
-        <p className='text-gray-600'>
-          Acompanhe o crescimento da sua loja com estatísticas detalhadas
-        </p>
+      <div className='grid md:grid-cols-3 gap-8'>
+        <FeatureCard
+          title='URL personalizável'
+          description='Um domínio próprio dá um aspecto profissional para sua marca, torna sua loja mais fácil de encontrar e de compartilhar.'
+        />
+        <FeatureCard
+          title='Integração com plataformas'
+          description='Com poucos cliques, anuncie seus produtos no Instagram, Enjoei e OLX. Aumente sua visibilidade e alcance mais clientes sem esforço adicional.'
+        />
+        <FeatureCard
+          title='Visualize sua evolução'
+          description='Acompanhe o crescimento da sua loja com estatísticas detalhadas. Veja quais produtos estão vendendo mais, de onde vêm seus clientes e muito mais.'
+        />
       </div>
     </div>
   )

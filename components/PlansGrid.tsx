@@ -4,22 +4,22 @@ import PlanCard from './PlanCard'
 export default function PlansGrid() {
   const plans: Plan[] = [
     {
-      id: 'launch',
-      name: 'Launch Plan',
+      id: 'free',
+      name: 'Free',
       monthly: 0,
       yearly: 0,
       currency: 'BRL',
-      features: ['Basic storefront', 'Up to 100 products', 'Community support'],
-      ctaLabel: 'Launch Free',
+      features: ['Domínio customizável', 'Integração com Instagram', 'Até 100 produtos'],
+      ctaLabel: 'Começar grátis',
     },
     {
       id: 'partner',
-      name: 'Partner Plan',
-      monthly: 15,
-      yearly: 150,
+      name: 'Plus',
+      monthly: 29.90,
+      yearly: 269.90,
       currency: 'BRL',
-      features: ['Custom subdomain', 'Priority support', 'Advanced analytics'],
-      ctaLabel: 'Start Partner Plan',
+      features: ['Domínio customizável', 'Integração com Instagram', 'Integração com Enjoei e OLX', 'Até 1000 produtos', 'Dashboard de estatísticas'],
+      ctaLabel: 'Tornar-se Plus',
       highlight: true,
     },
   ]

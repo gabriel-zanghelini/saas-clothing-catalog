@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Plan } from '@/types/plan.types'
+import { merriweather } from './fonts'
 
 type Props = {
   plan: Plan
@@ -40,7 +41,9 @@ export default function PlanCard({ plan }: Props) {
   return (
     <article className='bg-white p-6 rounded-lg shadow-md flex flex-col justify-between text-center'>
       <div>
-        <h3 className='text-2xl font-semibold text-primary-400 mb-2'>
+        <h3
+          className={`text-xl font-semibold text-primary-400 ${merriweather.className} mb-4`}
+        >
           {plan.name}
         </h3>
 
@@ -48,9 +51,7 @@ export default function PlanCard({ plan }: Props) {
           {showMonthly ? (
             <div className='text-2xl md:text-3xl font-bold text-gray-900'>
               {formatCurrency(monthly, plan.currency)}
-              <span className='text-base font-medium text-gray-600'>
-                /mês
-              </span>
+              <span className='text-base font-medium text-gray-600'>/mês</span>
             </div>
           ) : (
             <div className='text-2xl md:text-3xl font-bold text-gray-900'>

@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <div className='container mx-auto px-4 py-16'>
+      <div className='container mx-auto px-36 py-16'>
         <HeroSection />
         <Features />
         <PlansGrid />

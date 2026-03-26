@@ -10,20 +10,20 @@ const HeroSection: React.FC = () => {
       >
         Tenha sua própria loja de roupas em minutos
       </h1>
-      <p className='text-xl text-gray-400 mb-12 ml-1'>
+      <p className='text-xl text-gray-500 mb-12 ml-1'>
         Grátis. Direto ao ponto. Ideal para quem está começando a vender online.
       </p>
 
-      <div className='flex flex-col sm:flex-row gap-4 justify-center mb-16'>
+      <div className='flex flex-col justify-end sm:flex-row gap-4 mb-16 ml-1'>
         <Link
           href='#'
-          className='px-8 py-3 bg-primary-300 hover:bg-primary-400 text-white font-semibold rounded-md shadow-sm shadow-gray-200 transition-colors'
+          className='bg-primary-300 hover:bg-primary-400 text-white text-lg font-semibold px-10 py-4 rounded-lg shadow-md shadow-gray-300 transition-colors'
         >
           Quero vender
         </Link>
         <Link
           href='#'
-          className='px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-md shadow-sm shadow-gray-200 transition-colors'
+          className='bg-white hover:bg-gray-50 text-gray-700 text-lg font-semibold px-5 py-4 rounded-lg shadow-md shadow-gray-300 transition-colors'
         >
           Entrar na loja
         </Link>

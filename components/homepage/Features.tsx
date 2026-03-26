@@ -1,9 +1,14 @@
+import { merriweather } from '../fonts'
 import FeatureCard from './FeatureCard'
 
 const Features: React.FC = () => {
   return (
-    <div className="mt-16">
-      <h2 className='text-2xl font-bold mb-8 text-center'>Funcionalidades</h2>
+    <div className='mt-16'>
+      <h2
+        className={`text-2xl font-bold mb-8 text-center ${merriweather.className} text-gray-600`}
+      >
+        Funcionalidades
+      </h2>
 
       <div className='grid md:grid-cols-3 gap-8'>
         <FeatureCard

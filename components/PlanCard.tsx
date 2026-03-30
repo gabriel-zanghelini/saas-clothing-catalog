@@ -42,7 +42,7 @@ export default function PlanCard({ plan }: Props) {
     <article className='bg-white p-6 rounded-lg shadow-md flex flex-col justify-between text-center'>
       <div>
         <h3
-          className={`text-xl font-semibold text-primary-400 ${merriweather.className} mb-4`}
+          className={`text-xl font-bold text-primary-400 ${merriweather.className} mb-2`}
         >
           {plan.name}
         </h3>

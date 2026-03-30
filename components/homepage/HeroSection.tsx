@@ -14,18 +14,18 @@ const HeroSection: React.FC = () => {
         Grátis. Direto ao ponto. Ideal para quem está começando a vender online.
       </p>
 
-      <div className='flex flex-col justify-end sm:flex-row gap-4 mb-16 ml-1'>
+      <div className='mb-16 ml-1 flex flex-col justify-end items-end sm:flex-row gap-4'>
         <Link
           href='#'
-          className='bg-primary-300 hover:bg-primary-400 text-white text-lg font-semibold px-10 py-4 rounded-lg shadow-md shadow-gray-300 transition-colors'
+          className='bg-white hover:bg-gray-50 text-gray-500 rounded-lg shadow-md shadow-gray-300 transition-colors py-2.5 px-4 text-lg'
         >
-          Quero vender
+          Acessar minha loja
         </Link>
         <Link
           href='#'
-          className='bg-white hover:bg-gray-50 text-gray-700 text-lg font-semibold px-5 py-4 rounded-lg shadow-md shadow-gray-300 transition-colors'
+          className='bg-primary-300 hover:bg-primary-400 text-white rounded-lg shadow-md shadow-gray-300 transition-colors py-2.5 px-8 text-lg font-bold'
         >
-          Entrar na loja
+          Começar a vender
         </Link>
       </div>
     </div>

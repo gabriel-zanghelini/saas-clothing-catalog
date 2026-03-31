@@ -11,10 +11,13 @@ const Header: React.FC = () => {
       </span>
       <nav className='flex gap-8 font-semibold font-lg'>
         <a href='#' className='hover:text-gray-600 transition-colors'>
-          Features
+          Funcionalidades
         </a>
         <a href='#' className='hover:text-gray-600 transition-colors'>
-          Plans
+          Como Funciona
+        </a>
+        <a href='#' className='hover:text-gray-600 transition-colors'>
+          Planos
         </a>
         <a href='#' className='hover:text-gray-600 transition-colors'>
           Registrar

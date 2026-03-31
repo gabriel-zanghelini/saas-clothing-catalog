@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { merriweather } from '../fonts'
+import Image from 'next/image'
 
 const HeroSection: React.FC = () => {
   return (
@@ -28,6 +29,15 @@ const HeroSection: React.FC = () => {
           Começar a vender
         </Link>
       </div>
+
+      <Image 
+        src='/images/sample-screenshot.png'
+        alt='Hero Image'
+        width={1000}
+        height={700}
+        className='mx-auto shadow-2xl rounded-md'
+      />
+
     </div>
   )
 }

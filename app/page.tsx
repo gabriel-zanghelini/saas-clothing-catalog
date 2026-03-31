@@ -2,7 +2,6 @@ import PlansGrid from '@/components/PlansGrid'
 import Header from '@/components/homepage/Header'
 import HeroSection from '@/components/homepage/HeroSection'
 import Features from '@/components/homepage/Features'
-import Partners from '@/components/homepage/Partners'
 import HowTo from '@/components/homepage/HowTo'
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
         <Features />
         <HowTo />
         <PlansGrid />
-        <Partners />
       </div>
     </>
   )

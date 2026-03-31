@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Card from './Card'
 
 interface FeatureCardProps {
   title: string
@@ -15,7 +16,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   size = 150,
 }) => {
   return (
-    <div className='p-6 rounded-md shadow-lg text-center border-2 border-gray-100 flex flex-col justify-between'>
+    <Card>
       <h3 className={`text-2xl font-semibold mb-4`}>{title}</h3>
       <Image
         src={imgSrc}
@@ -25,7 +26,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         className='mx-auto mb-4 p-4'
       />
       <p className='text-gray-600'>{description}</p>
-    </div>
+    </Card>
   )
 }
 

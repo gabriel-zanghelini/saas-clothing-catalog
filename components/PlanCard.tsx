@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Plan } from '@/types/plan.types'
+import Card from './homepage/Card'
 
 type Props = {
   plan: Plan
@@ -40,9 +41,7 @@ export default function PlanCard({ plan }: Props) {
   const isBestPlan = plan.id === 'partner'
 
   return (
-    <article
-      className={`p-6 rounded-lg shadow-lg flex flex-col justify-between text-center border-2 ${isBestPlan ? ' border-secondary-300' : 'border-gray-100'}`}
-    >
+    <Card isSelected={isBestPlan} className='h-140'>
       <div>
         <h3 className={`text-xl font-bold text-primary-800 mb-2`}>
           {plan.name}
@@ -75,7 +74,7 @@ export default function PlanCard({ plan }: Props) {
           )}
         </div>
 
-        <ul className='mb-6 space-y-2 text-gray-600'>
+        <ul className='my-8 space-y-3 text-gray-600'>
           {plan.features.map((f) => (
             <li key={f} className='flex items-start gap-2'>
               <span aria-hidden>💚</span>
@@ -97,6 +96,6 @@ export default function PlanCard({ plan }: Props) {
           {plan.ctaLabel ?? 'Get started'}
         </Link>
       </div>
-    </article>
+    </Card>
   )
 }

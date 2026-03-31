@@ -17,10 +17,10 @@ const Header: React.FC = () => {
           Plans
         </a>
         <a href='#' className='hover:text-gray-600 transition-colors'>
-          Sign Up
+          Registrar
         </a>
         <a href='#' className='hover:text-gray-600 transition-colors'>
-          Login In
+          Entrar
         </a>
       </div>
     </div>

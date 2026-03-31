@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import type { Plan } from '@/types/plan.types'
-import { merriweather } from './fonts'
 
 type Props = {
   plan: Plan
@@ -38,12 +37,14 @@ export default function PlanCard({ plan }: Props) {
 
   const yearlyText = `or ${formatCurrency(yearly, plan.currency)}/ano ${monthlyEquivalent !== null ? `= ${formatCurrency(monthlyEquivalent, plan.currency)}/mês` : ''}`
 
+  const isBestPlan = plan.id === 'partner'
+
   return (
-    <article className='bg-white p-6 rounded-lg shadow-md flex flex-col justify-between text-center'>
+    <article
+      className={`p-6 rounded-lg shadow-lg flex flex-col justify-between text-center border-2 ${isBestPlan ? ' border-secondary-300' : 'border-gray-100'}`}
+    >
       <div>
-        <h3
-          className={`text-xl font-bold text-primary-400 ${merriweather.className} mb-2`}
-        >
+        <h3 className={`text-xl font-bold text-primary-800 mb-2`}>
           {plan.name}
         </h3>
 
@@ -88,8 +89,8 @@ export default function PlanCard({ plan }: Props) {
         <Link
           href='/auth/signup'
           className={`inline-block w-full text-center px-4 py-2 rounded-lg font-semibold transition-colors ${
-            plan.monthly && plan.monthly > 0
-              ? 'bg-primary-300 text-white hover:bg-primary-400'
+            isBestPlan
+              ? 'bg-primary-800 text-white hover:bg-primary-900'
               : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
           }`}
         >

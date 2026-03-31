@@ -8,16 +8,20 @@ const Features: React.FC = () => {
 
       <div className='grid md:grid-cols-3 gap-8'>
         <FeatureCard
-          title='URL personalizável'
-          description='Um domínio próprio dá um aspecto profissional para sua marca, torna sua loja mais fácil de encontrar e de compartilhar.'
+          title='Domínio customizável'
+          description='Torne sua loja mais fácil de encontrar e de compartilhar.'
+          imgSrc='/images/card2.png'
         />
         <FeatureCard
           title='Integração com plataformas'
-          description='Com poucos cliques, anuncie seus produtos no Instagram, Enjoei e OLX. Aumente sua visibilidade e alcance mais clientes sem esforço adicional.'
+          description='Com poucos cliques, anuncie seus produtos  também no Instagram, Enjoei e OLX.'
+          imgSrc='/images/card1.png'
+          size={200}
         />
         <FeatureCard
           title='Visualize sua evolução'
-          description='Acompanhe o crescimento da sua loja com estatísticas detalhadas. Veja quais produtos estão vendendo mais, de onde vêm seus clientes e muito mais.'
+          description='Acompanhe o crescimento da sua loja com estatísticas detalhadas.'
+          imgSrc='/images/card3.png'
         />
       </div>
     </div>

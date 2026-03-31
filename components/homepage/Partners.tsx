@@ -1,6 +1,6 @@
 const Partners: React.FC = () => {
   return (
-    <div className='mt-16 p-8 bg-white rounded-lg shadow-md'>
+    <section className='mt-16 p-8 bg-white rounded-lg shadow-md'>
       <h2 className='text-gray-600 text-2xl font-bold mb-6'>
         Conheça alguns parceiros
       </h2>
@@ -38,7 +38,7 @@ const Partners: React.FC = () => {
         Note: Demo links work on localhost. Configure your hosts file for local
         testing.
       </p>
-    </div>
+    </section>
   )
 }
 

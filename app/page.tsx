@@ -3,6 +3,7 @@ import Header from '@/components/homepage/Header'
 import HeroSection from '@/components/homepage/HeroSection'
 import Features from '@/components/homepage/Features'
 import Partners from '@/components/homepage/Partners'
+import HowTo from '@/components/homepage/HowTo'
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <div className='container mx-auto px-36 py-16'>
         <HeroSection />
         <Features />
+        <HowTo />
         <PlansGrid />
         <Partners />
       </div>

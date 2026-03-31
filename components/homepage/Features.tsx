@@ -3,7 +3,7 @@ import Title from './Title'
 
 const Features: React.FC = () => {
   return (
-    <div className='mt-16'>
+    <section className='mt-16'>
       <Title title='Funcionalidades' />
 
       <div className='grid md:grid-cols-3 gap-8'>
@@ -24,7 +24,7 @@ const Features: React.FC = () => {
           imgSrc='/images/card3.png'
         />
       </div>
-    </div>
+    </section>
   )
 }
 
